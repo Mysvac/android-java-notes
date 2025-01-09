@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.view_test_btn).setOnClickListener(this);
         findViewById(R.id.junior_btn).setOnClickListener(this);
         findViewById(R.id.adapter_btn).setOnClickListener(this);
+        findViewById(R.id.storage_btn).setOnClickListener(this);
     }
 
     @Override
@@ -38,6 +39,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         if(id==R.id.adapter_btn){
             startActivity(new Intent(this, AdapterActivity.class ));
+        }
+        if(id==R.id.storage_btn){
+            startActivity(new Intent(this, StorageActivity.class ));
         }
     }
 
