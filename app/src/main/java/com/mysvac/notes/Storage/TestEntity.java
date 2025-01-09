@@ -1,4 +1,4 @@
-package com.mysvac.notes;
+package com.mysvac.notes.Storage;
 
 public class TestEntity {
     public int _id = 0;

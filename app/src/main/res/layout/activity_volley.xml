@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <!-- 显示图片 -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+    <!-- 输入图片链接 -->
+    <EditText
+        android:id="@+id/imgURL"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:autofillHints="url"
+        android:inputType="textUri"
+        android:hint="输入图片连接（默认百度图标）："
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/submit"
+        />
+
+    <!-- 修改图片的按钮 -->
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="60dp"
+        android:text="修改"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        />
+
+</RelativeLayout>

@@ -56,5 +56,4 @@ public class AdapterActivity extends AppCompatActivity {
 
     }
 
-
 }

@@ -2,8 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
-        android:name=".MyApplication"
+        android:name=".Storage.MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -16,7 +18,11 @@
         <activity android:name=".AdapterActivity"/>
         <activity android:name=".JuniorActivity" />
         <activity android:name=".ViewTestActivity" />
-        <activity android:name=".StorageActivity" />
+        <activity android:name=".Storage.StorageActivity" />
+        <activity android:name=".fragment.FragmentActivity"/>
+        <activity android:name=".VolleyActivity"/>
+        <activity android:name=".ThreadActivity"/>
+        <activity android:name=".DateActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

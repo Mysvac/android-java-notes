@@ -22,6 +22,4 @@ public class JuniorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_junior);
 
     }
-
-
 }

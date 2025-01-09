@@ -1,4 +1,4 @@
-package com.mysvac.notes;
+package com.mysvac.notes.Storage;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.mysvac.notes.R;
 
 import java.util.ArrayList;
 
@@ -19,7 +21,9 @@ public class StorageActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_storage);
 
+        // 贡献参数
         shared = getSharedPreferences("test",MODE_PRIVATE);
+        // 数据库管理器
         dbManager = SQLiteManager.getInstance(this,0);
 
         findViewById(R.id.btn_1).setOnClickListener(this);
@@ -27,6 +31,7 @@ public class StorageActivity extends AppCompatActivity implements View.OnClickLi
         findViewById(R.id.btn_3).setOnClickListener(this);
         findViewById(R.id.btn_4).setOnClickListener(this);
 
+        // 刷新
         load_content();
     }
 
@@ -53,6 +58,7 @@ public class StorageActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     public void load_content(){
+        // 加载数据
         String content = shared.getString("content","null");
         TextView tv_1 = findViewById(R.id.tv_1);
         tv_1.setText(content);
@@ -66,13 +72,13 @@ public class StorageActivity extends AppCompatActivity implements View.OnClickLi
         tv_2.setText(content2);
 
 
-
         TextView tv_4 = findViewById(R.id.tv_4);
         tv_4.setText(MyApplication.appContentText);
 
     }
 
     public void func_1(){
+        // 共享参数
         EditText tv = findViewById(R.id.edit_1);
         String content = tv.getText().toString();
         SharedPreferences.Editor editor = shared.edit();
@@ -82,6 +88,7 @@ public class StorageActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     public void func_2(){
+        // 数据库
         EditText tv = findViewById(R.id.edit_2);
         String content = tv.getText().toString();
         TestEntity item = new TestEntity();
@@ -96,10 +103,11 @@ public class StorageActivity extends AppCompatActivity implements View.OnClickLi
     public void func_3(){
 
     }
+
     public void func_4(){
+        // 全局内存
         EditText tv = findViewById(R.id.edit_4);
         MyApplication.appContentText= tv.getText().toString();
     }
-
 
 }

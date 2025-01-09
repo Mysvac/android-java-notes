@@ -1,4 +1,4 @@
-package com.mysvac.notes;
+package com.mysvac.notes.Storage;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 public class SQLiteManager extends SQLiteOpenHelper {
 
+    // 数据库基本参数
     private static final String DB_NAME = "test.db";
     private static final int DB_VERSION = 1;
     private static SQLiteManager manager = null;
@@ -18,7 +19,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
 
     public static final String TABLE_NAME = "test_info";
 
-
+    // 初始化
     public SQLiteManager(Context context){
         super(context, DB_NAME, null, DB_VERSION);
     }
@@ -27,6 +28,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         super(context, DB_NAME, null, version);
     }
 
+    // 单例
     public static SQLiteManager getInstance(Context context, int version){
         if(version>0 && manager==null){
             manager = new SQLiteManager(context.getApplicationContext(),version);
@@ -116,13 +118,13 @@ public class SQLiteManager extends SQLiteOpenHelper {
         return entityList;
     }
 
-        public TestEntity queryLast(){
-            TestEntity item = null;
-            ArrayList<TestEntity> list = query("_id>=0");
-            if(list.size()>0){
-                item = list.get(list.size()-1);
-            }
-            return item;
+    public TestEntity queryLast(){
+        TestEntity item = null;
+        ArrayList<TestEntity> list = query("_id>=0");
+        if(list.size()>0){
+            item = list.get(list.size()-1);
         }
+        return item;
+    }
 
 }
